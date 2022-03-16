@@ -1,0 +1,156 @@
+html{
+    background-image: url("https://res.cloudinary.com/carsmart/image/upload/v1647405390/UI%20Images/main_dc04uo.jpg");
+    background-repeat: no-repeat;
+    background-size: 250%;
+    min-width: max-content;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.home-main {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-1);
+    margin: 0;
+}
+
+.top-wrapper {
+    gap: var(--sp-1);
+    justify-content: center;
+}
+
+.home-section {
+    padding: 0;
+}
+
+a{
+    color: var(--black);
+}
+
+.overlay-text {
+    top: 40%;
+    opacity: 70%;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    background-color: var(--white);
+    color:var(--black);
+}
+
+.card-midtext {
+    background-color: transparent;
+    height: 7rem;
+    overflow: hidden;
+    transition: all linear 0.2s;
+    padding: 1px;
+    border-radius: var(--sp-0-5);
+}
+
+.card-midtext:hover {
+    transform: scale(95%);
+}
+
+.prod-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hero-img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 80vw;
+    align-items: center;
+}
+
+.hero-img>img {
+    border-radius: var(--sp-1);
+    max-width: 100%;
+}
+
+.hero-img-text {
+    position: absolute;
+    bottom: 7%;
+    left: 20%;
+    color: var(--white);
+    font-size: 2em;
+}
+
+.arrival-wrapper {
+    gap: var(--sp-2);
+}
+
+.arrival-card {
+    padding: var(--sp-2);
+    background-color: var(--cadet);
+    gap: var(--sp-2);
+    width: fit-content;
+    height: max-content;
+    max-width: max-content;
+}
+
+.arrival-card-text {
+    gap: var(--sp-0-5);
+    max-width: 35ch;
+    color: var(--white);
+}
+
+.arrival-card-img {
+    width: 10rem;
+}
+
+[class*="card"]:hover {
+    cursor: pointer;
+}
+
+.search-input{
+    max-width: 30%;
+}
+
+
+@media only screen and (max-width:1200px) {   
+    .midtext-card:nth-child(3){
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width:880px) {
+
+    .hero-img-text {
+        font-size: 1em;
+    }
+
+    .arrival-wrapper {
+        flex-direction: column;
+    }
+
+    .midtext-card:nth-child(4){
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width:500px) {
+
+    .search-input{
+        display: none;
+    }
+
+    nav{
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .midtext-card:nth-child(2){
+        display: none;
+    }
+}
