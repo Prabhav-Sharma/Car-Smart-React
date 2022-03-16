@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
 }
 
-main {
+.home-main {
     padding: 0;
     justify-content: center;
     align-items: center;
@@ -24,12 +24,12 @@ main {
     justify-content: center;
 }
 
-section {
+.home-section {
     padding: 0;
 }
 
 a{
-    color: var(--);
+    color: var(--black);
 }
 
 .overlay-text {

@@ -9,7 +9,7 @@ const Navigation=()=>{
             <h2 className="title-highlight">Smart</h2>
         </Link>
     </div>
-    <input placeholder="Search" className="search-input input-m input-round-border"/>
+    <input placeholder="Search" className="search-input input-m input-round-border nav-input"/>
     <div className="nav-links links-top flex-row">
         <Link className="nav-link" to="/login"><button className="btn prim-btn btn-round">Login</button></Link>
         <Link className="nav-link" to="/bookmark"><img className="icon nav-icon"

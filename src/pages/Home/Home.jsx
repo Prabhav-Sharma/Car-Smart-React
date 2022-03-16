@@ -10,8 +10,8 @@ useEffect(()=>{
 
 
 return (
-<main className="flex-column">
-<section>
+<main className="flex-column home-main">
+<section className="home-section">
     <div className="top-wrapper flex-row">
         <a href="/product/product.html" className="midtext-card">
             <div className="card-midtext">

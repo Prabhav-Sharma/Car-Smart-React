@@ -33,7 +33,7 @@ nav {
     transform: translateX(5px);
 }
 
-input {
+.nav-input {
     height: fit-content;
     align-self: center;
     max-width: 30rem;

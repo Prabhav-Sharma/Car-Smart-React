@@ -1,7 +1,7 @@
 import "./footer.css";
 
 const Footer =()=>{
-  return (  <footer className="flex-column">
+  return (  <footer className="flex-column footer">
     <div className="footer-items">
         <h4>Made with 💜 by Prabhav Sharma</h4>
         <div className="footer-links flex-row">
