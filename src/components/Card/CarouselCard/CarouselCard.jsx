@@ -1,4 +1,5 @@
 import React from 'react'
+import "./carousel-card.css";
 
 function CarouselCard({src, text}) {
   return (

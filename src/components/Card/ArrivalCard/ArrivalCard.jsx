@@ -1,4 +1,5 @@
 import React from 'react'
+import "./arrival-card.css"
 
 function ArrivalCard({text, name, src}) {
   return (
@@ -17,4 +18,4 @@ function ArrivalCard({text, name, src}) {
   )
 }
 
-export default ArrivalCard
+export default ArrivalCard;

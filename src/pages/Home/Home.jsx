@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import "./home.css";
 import Footer from "../../components/Footer/Footer";
-import CarouselCard from "../../components/Card/CarouselCard";
-import ArrivalCard from "../../components/Card/ArrivalCard";
+import CarouselCard from "../../components/Card/CarouselCard/CarouselCard";
+import ArrivalCard from "../../components/Card/ArrivalCard/ArrivalCard";
 
 const Home=()=>{
 
@@ -18,8 +18,8 @@ return (
         <CarouselCard src={"https://res.cloudinary.com/carsmart/image/upload/v1647405499/Product%20Categories/SUV_jmljyj.webp"} text={"SUV"} />
         <CarouselCard src={"https://res.cloudinary.com/carsmart/image/upload/v1647405497/Product%20Categories/Sedan_bok3uz.jpg"} text={"Sedan"} />
         <CarouselCard src={"https://res.cloudinary.com/carsmart/image/upload/v1647405461/Product%20Categories/hatchback_oyydlk.webp"} text={"Hatchback"} />
-        <CarouselCard src={"https://res.cloudinary.com/carsmart/image/upload/v1647405499/Product%20Categories/convertible_yx2xnk.jpg"} text={"Convertible"} />
-        <CarouselCard src={"https://res.cloudinary.com/carsmart/image/upload/v1647405498/Product%20Categories/sport_sczusj.webp"} text={"Sport"} />
+        <CarouselCard src={"https://res.cloudinary.com/carsmart/image/upload/v1647405499/Product%20Categories/convertible_yx2xnk.jpg"} text={"Luxury"} />
+        <CarouselCard src={"https://res.cloudinary.com/carsmart/image/upload/v1647405498/Product%20Categories/sport_sczusj.webp"} text={"Electric"} />
     </div>
 </section>
 <section>

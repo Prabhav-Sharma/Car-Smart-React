@@ -1,0 +1,24 @@
+.overlay-text {
+    top: 40%;
+    opacity: 70%;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    background-color: var(--white);
+    color:var(--black);
+}
+
+.card-midtext {
+    background-color: transparent;
+    height: 7rem;
+    overflow: hidden;
+    transition: all linear 0.2s;
+    padding: 1px;
+    border-radius: var(--sp-0-5);
+}
+
+.card-midtext:hover {
+    transform: scale(95%);
+}
