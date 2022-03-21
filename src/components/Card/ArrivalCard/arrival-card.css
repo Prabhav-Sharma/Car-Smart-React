@@ -1,0 +1,18 @@
+.arrival-card {
+    padding: var(--sp-2);
+    background-color: var(--cadet);
+    gap: var(--sp-2);
+    width: fit-content;
+    height: max-content;
+    max-width: max-content;
+}
+
+.arrival-card-text {
+    gap: var(--sp-0-5);
+    max-width: 35ch;
+    color: var(--white);
+}
+
+.arrival-card-img {
+    width: 10rem;
+}

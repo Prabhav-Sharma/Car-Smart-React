@@ -1,9 +1,3 @@
-html{
-    background-image: url("https://res.cloudinary.com/carsmart/image/upload/v1647405390/UI%20Images/main_dc04uo.jpg");
-    background-repeat: no-repeat;
-    background-size: 250%;
-    min-width: max-content;
-}
 
 body {
     margin: 0;
@@ -32,30 +26,6 @@ a{
     color: var(--black);
 }
 
-.overlay-text {
-    top: 40%;
-    opacity: 70%;
-    font-weight: 900;
-    font-size: 1.2rem;
-    text-align: center;
-    padding: 0;
-    width: 100%;
-    background-color: var(--white);
-    color:var(--black);
-}
-
-.card-midtext {
-    background-color: transparent;
-    height: 7rem;
-    overflow: hidden;
-    transition: all linear 0.2s;
-    padding: 1px;
-    border-radius: var(--sp-0-5);
-}
-
-.card-midtext:hover {
-    transform: scale(95%);
-}
 
 .prod-img {
     max-width: 100%;
@@ -86,25 +56,7 @@ a{
 
 .arrival-wrapper {
     gap: var(--sp-2);
-}
-
-.arrival-card {
-    padding: var(--sp-2);
-    background-color: var(--cadet);
-    gap: var(--sp-2);
-    width: fit-content;
     height: max-content;
-    max-width: max-content;
-}
-
-.arrival-card-text {
-    gap: var(--sp-0-5);
-    max-width: 35ch;
-    color: var(--white);
-}
-
-.arrival-card-img {
-    width: 10rem;
 }
 
 [class*="card"]:hover {

@@ -1,2 +1,7 @@
 @import url("/node_modules/mockman-js/dist/style.css");
 
+html{
+    background-image: url("https://res.cloudinary.com/carsmart/image/upload/v1647405390/UI%20Images/main_dc04uo.jpg");
+    background-size: 250%;
+    min-width: max-content;
+}
