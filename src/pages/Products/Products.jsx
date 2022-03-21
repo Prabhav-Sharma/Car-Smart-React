@@ -4,7 +4,7 @@ import "./products.css";
 import {useEffect} from "react";
 import axios from "axios";
 import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
-
+import {useDocumentTitle} from "../../hooks/useDocumentTitle";
 
 function Products() {
   const {state, dispatch, filteredProducts} = useProducts();
@@ -18,9 +18,7 @@ function Products() {
     filterPrice,
   } = state;
 
-  useEffect(() => {
-    document.title = "Products | CarSmart";
-  }, []);
+  useDocumentTitle("Products | CarSmart");
 
   useEffect(() => {
     (async () => {

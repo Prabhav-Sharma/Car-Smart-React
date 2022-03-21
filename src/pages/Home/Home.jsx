@@ -3,12 +3,11 @@ import "./home.css";
 import Footer from "../../components/Footer/Footer";
 import CarouselCard from "../../components/Card/CarouselCard/CarouselCard";
 import ArrivalCard from "../../components/Card/ArrivalCard/ArrivalCard";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const Home=()=>{
 
-useEffect(()=>{
-        document.title="CarSmart";
-    },[]);
+useDocumentTitle("CarSmart");
 
 
 return (
