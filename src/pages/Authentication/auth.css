@@ -1,0 +1,62 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.auth-main {
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+    height: calc(100vh - 3.125rem);
+    max-height: 75vh;
+} 
+
+form {
+    border-radius: var(--sp-0-75);
+    box-shadow: 2px 2px 2px var(--black);
+    background-color: var(--white);
+    gap: var(--sp-0-75);
+    padding: var(--sp-2);
+    user-select: none;
+    width: 25rem;
+}
+
+.login-title,
+.new-acc-link {
+    text-align: center;
+}
+
+.form-input {
+    width: 95%;
+}
+
+.form-wrapper {
+    justify-content: space-between;
+}
+
+.form-wrapper>a,
+.new-acc-link {
+    color:var(--primary-color);
+    font-size: 1rem;
+}
+
+#login-btn,
+#signup-btn,
+.alternate-signup {
+    align-self: center;
+    width: 95%;
+}
+
+label {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+
+@media only screen and (max-width:520px) {
+
+    .login-container {
+        width: 18rem;
+    }
+
+}
