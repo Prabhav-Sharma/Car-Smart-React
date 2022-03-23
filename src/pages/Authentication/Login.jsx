@@ -6,21 +6,24 @@ import FormTextInput from '../../components/FormInputText/FormInputText';
 import axios from 'axios';
 import { useAuthForm } from '../../hooks/useAuthForm/useAuthForm';
 import { useAuth } from '../../contexts/Providers/AuthProvider/AuthProvider';
+import { useEffect } from 'react';
 const EMAIL_REGEX=/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
 
 function Login() {
-  const {authState, authDispatch} = useAuth();
+  const {authDispatch} = useAuth();
   const {authFormState, authFormDispatch} =useAuthForm();
-  const {email, password} = authFormState;
-  const {loading} = authState;
+  const {email, password, loading} = authFormState;
 
-  
+
+  useEffect(()=>{
+    return ()=>authFormDispatch({type:"LOADING_OFF"});
+  },[])
   const loginHandler = async (e) => {
     e.preventDefault();
-    authDispatch({type:"LOADING_ON"});
+    authFormDispatch({type:"LOADING_ON"});
     try {
       if(!EMAIL_REGEX.test(email)){
-        alert("Please Enter a Valid Email Address");
+        alert("Please enter a valid email address");
         return;
       }
       if(password.length===0){
@@ -39,8 +42,9 @@ function Login() {
       alert("Wrong Credentials");
     } catch (error) {
       console.log(error);
+      alert("Account doesn't exist");
     }finally{
-      authDispatch({type:"LOADING_OFF"});
+      authFormDispatch({type:"LOADING_OFF"});
     }
   };
   
