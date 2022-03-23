@@ -7,17 +7,25 @@ import Compare from "../pages/Compare/Compare";
 import Products from "../pages/Products/Products";
 import Login from "../pages/Authentication/Login";
 import Signup from "../pages/Authentication/Signup";
+import Bookmark from '../pages/Bookmark/Bookmark';
+import { GuestRoutes } from './GuestRoutes';
+import { ProtectedRoutes } from './ProtectedRoutes';
 
 const Router=()=> {
   return (
     <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/mockman" element={<MockAPI/>}/>
-        <Route path="/booking" element={<Booking/>}/>
         <Route path="/compare" element={<Compare/>}/>
         <Route path="/products" element={<Products/>}/>
+        <Route element={<GuestRoutes />}>
         <Route path="/login" element={<Login/>}/>
         <Route path="/Signup" element={<Signup/>}/>
+        </Route>
+        <Route element={<ProtectedRoutes/>}>
+        <Route path="/bookmark" element={<Bookmark/>}/>
+        <Route path="/booking" element={<Booking/>}/>
+        </Route>
       </Routes>
   )
 }
