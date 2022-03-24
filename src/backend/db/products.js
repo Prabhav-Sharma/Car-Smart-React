@@ -66,12 +66,12 @@ export const products = [
     src:"https://res.cloudinary.com/carsmart/image/upload/v1647683095/Products/BMW_X5_i39qyy.webp",
     rating:5,
     specs:{
-   mileage:"13.38 kmpl",
-   engine:"2998 cc",
-   BHP:335.26,
-   transmission:"Automatic",
-   seats:5,
-   serviceCost:"₹ 14,454/yr"
+    mileage:"13.38 kmpl",
+    engine:"2998 cc",
+    BHP:335.26,
+    transmission:"Automatic",
+    seats:5,
+    serviceCost:"₹ 14,454/yr"
  }
   },
   {
@@ -83,12 +83,12 @@ export const products = [
     src:"https://res.cloudinary.com/carsmart/image/upload/v1647670820/Products/e-tron_GT_volvij.webp",
     rating:4.8,
     specs:{
-   mileage:"388 Km",
-   engine:"95 kWh",
-   BHP:390.0,
-   transmission:"Automatic",
-   seats:5,
-   serviceCost:"₹ 20,454/yr"
+    mileage:"388 Km",
+    engine:"95 kWh",
+    BHP:390.0,
+    transmission:"Automatic",
+    seats:5,
+    serviceCost:"₹ 20,454/yr"
  }
   },
   {
