@@ -150,10 +150,4 @@ aside{
     html{
         font-size: 70%;
     }
-
-    .product-grid{
-        grid-template-columns: repeat(auto-fill, 14rem);
-        /* gap:var(--sp-1); */
-        width: 100vw;
-    }
 }
