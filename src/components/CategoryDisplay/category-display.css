@@ -1,0 +1,23 @@
+.spec-category-wrapper {
+    align-items: center;
+    gap: var(--sp-0-5);
+}
+
+.spec-category-wrapper>h4 {
+    color: var(--white);
+}
+
+.spec-category-wrapper>h5 {
+    color: var(--secondary-color);
+}
+
+.category-icon {
+    width: 4rem;
+    height: 4rem;
+    filter: invert(100%);
+    transition: 0.3s;
+}
+
+.category-icon:hover{
+    transform: scale(110%);
+}
