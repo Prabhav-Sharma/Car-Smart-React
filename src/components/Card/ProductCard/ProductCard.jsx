@@ -7,7 +7,7 @@ import { useBookmarks } from '../../../contexts/Providers/BookmarksProvider/Book
 import {useLoading} from "../../../hooks/useLoading";
 
 function ProductCard({info, EMI}) {
-  const {authState} = useAuth();
+const {authState} = useAuth();
   const {bookmarksState, bookmarksDispatch} = useBookmarks();
   const {loading:bookmarkLoading, setLoading:bookmarkSetLoading} = useLoading();
   const {title, price, src, _id} = info.prod;
@@ -61,6 +61,7 @@ const bookmarkBtn= bookmarks.some(bookmark=> bookmark._id===_id) ?
 
   return (
     <div className="card  flex-column">
+      <Link to={`/product/${_id}`}>
                 <div className="img-container">
                     <img className="prod-img" alt="Product Image"
                         src={src}/>
@@ -70,6 +71,7 @@ const bookmarkBtn= bookmarks.some(bookmark=> bookmark._id===_id) ?
                     <p className="prod-cost">{display}</p>
                     <p className="para-s gray-text">EMI starts at ₹{calcEMI.toLocaleString()}/month</p>
                 </div>
+                </Link>
                 <div className="card-btns flex-row">
                     {bookmarkBtn}
                     <button className="btn prim-btn">Book Now</button>

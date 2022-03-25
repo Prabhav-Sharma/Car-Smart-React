@@ -9,14 +9,12 @@ import loadingProduct from './loadingProduct';
 import CategoryDisplay from '../../components/CategoryDisplay/CategoryDisplay';
 import {MANUFACTURE_IMG, TYPE_IMG, MILEAGE_IMG, ENGINE_IMG, BHP_IMG, RATING_IMG, SEAT_IMG, TRANSMISSION_IMG, SERVICECOST_IMG} from "./CATEGORY_CONSTANTS";
 
-
 function Product() {
     const params= useParams();
     const [product, setProduct] = useState(loadingProduct);
     const {state, dispatch} = useProducts();
     const {id}= params;
     const {EMI} = state;
-
     const {title, price, rating, categoryName, src, brand, specs } = product;
     const {mileage,
         engine,
@@ -70,7 +68,7 @@ return (
               </div>
           </div>
       </div>
-      <div className=" grid auto-grid category-wrapper">
+<div className=" grid auto-grid category-wrapper">
     <CategoryDisplay src={MANUFACTURE_IMG} value={brand} title={"Manufacturer"} />
     <CategoryDisplay src={TYPE_IMG} value={categoryName} title={"Type"} />
     <CategoryDisplay src={MILEAGE_IMG} value={mileage} title={"Mileage"} />
