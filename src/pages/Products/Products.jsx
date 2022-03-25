@@ -57,8 +57,8 @@ function Products() {
   };
 
   return (
-    <main>
-      <aside className="flex-column">
+    <main className="products-main">
+      <aside className="flex-column products-aside">
         <div className="filter-top flex-row">
           <h4>Filters</h4>
           <h5 className="clear-btn" onClick={() => dispatch({ type: "CLEAR" })}>
