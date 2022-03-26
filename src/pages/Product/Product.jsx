@@ -7,8 +7,8 @@ import "./product.css";
 import { useProducts } from '../../contexts/Providers/ProductProvider/ProductProvider';
 import loadingProduct from './loadingProduct';
 import CategoryDisplay from '../../components/CategoryDisplay/CategoryDisplay';
+import {BookmarkButton} from "../../components/BookmarkButton/BookmarkButton";
 import {MANUFACTURE_IMG, TYPE_IMG, MILEAGE_IMG, ENGINE_IMG, BHP_IMG, RATING_IMG, SEAT_IMG, TRANSMISSION_IMG, SERVICECOST_IMG} from "./CATEGORY_CONSTANTS";
-
 function Product() {
     const params= useParams();
     const [product, setProduct] = useState(loadingProduct);
@@ -63,7 +63,7 @@ return (
               </div>
               </div>
               <div className=' flex-column btn-wrapper'>
-              <button className='btn product-btn prim-acc-btn'>Add to Compare</button>
+                  <BookmarkButton prod={product} classes={"btn product-btn prim-acc-btn"} />
               <button className='btn product-btn prim-btn'>Book Now</button>
               </div>
           </div>
