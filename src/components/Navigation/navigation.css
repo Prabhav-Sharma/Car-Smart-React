@@ -2,9 +2,6 @@
     --sp-0-75:0.75rem;
 }
 
-html{
-    background-color: var(--gray);
-}
 
 nav {
     justify-content: space-evenly;
@@ -48,11 +45,21 @@ nav {
 .icon {
     padding: 0;
     padding-top: 2px;
-    width: 2rem;
 }
 
+.nav-link{
+    position: relative;
+}
+
+.badge-text-m{
+   transform:scale(85%) translateY(-5px);
+   color:var(--white);
+   background-color: var(--primary-color);
+}
 .nav-icon{
     filter: invert(100%);
+    width: 2rem;
+    height: 2rem;
 }
 
 .search-input{
