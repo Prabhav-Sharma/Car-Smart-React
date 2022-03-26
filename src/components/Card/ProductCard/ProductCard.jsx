@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import "./product-card.css"
-import {useAuth} from "../../../contexts/Providers/AuthProvider/AuthProvider";
-import { useBookmarks } from '../../../contexts/Providers/BookmarksProvider/BookmarksProvider';
-import {useLoading} from "../../../hooks/useLoading";
-import {removeFromBookmarks, addToBookmarks} from "../../../contexts/Providers/BookmarksProvider/helpers";
+import "./product-card.css";
 import {BookmarkButton} from "../../BookmarkButton/BookmarkButton";
 
 function ProductCard({info, EMI}) {

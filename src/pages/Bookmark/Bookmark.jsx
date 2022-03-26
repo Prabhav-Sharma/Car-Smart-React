@@ -1,7 +1,6 @@
 import React from 'react'
 import "./bookmark.css";
 import { useEffect} from 'react';
-import axios from 'axios';
 import { Link} from 'react-router-dom';
 import BookmarkCard from '../../components/Card/BookmarkCard/BookmarkCard';
 import {useDocumentTitle} from "../../hooks/useDocumentTitle";

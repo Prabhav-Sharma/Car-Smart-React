@@ -10,19 +10,17 @@ const {authState} = useAuth();
 const {loading:bookmarkLoading, setLoading:setBookmarkLoading} = useLoading();
 const {bookmarksState, bookmarksDispatch} = useBookmarks();
 const {bookmarks} = bookmarksState;
-
+const token=localStorage.getItem("token");
 
 const addBookmarkHandler= (product)=>{
     if(!authState.isAuthenticated){
       alert("Need to login first");
       return;
     }
-     const token=localStorage.getItem("token");
      addToBookmarks(product, token, setBookmarkLoading, bookmarksDispatch);
      }
 
 const removeBookmarkHandler=(id)=>{
-        const token= localStorage.getItem("token");
         removeFromBookmarks(id, token, setBookmarkLoading, bookmarksDispatch);
   }
 
