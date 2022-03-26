@@ -1,37 +1,23 @@
 import React from 'react'
 import "./bookmark.css";
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import axios from 'axios';
 import { Link} from 'react-router-dom';
 import BookmarkCard from '../../components/Card/BookmarkCard/BookmarkCard';
 import {useDocumentTitle} from "../../hooks/useDocumentTitle";
 import { useBookmarks } from '../../contexts/Providers/BookmarksProvider/BookmarksProvider';
+import {fetchBookmarks} from "../../contexts/Providers/BookmarksProvider/helpers";
 
 function Bookmark() {
-const token = localStorage.getItem("token");
-const {bookmarksState, bookmarksDispatch} = useBookmarks();
-const {bookmarks} = bookmarksState; 
+    const {bookmarksState, bookmarksDispatch} = useBookmarks();
+    const {bookmarks} = bookmarksState; 
+    const token = localStorage.getItem("token");
 
 
 useDocumentTitle("Bookmarks | CarSmart");
 
 useEffect(()=>{
-
-    (async ()=>{
-        try{
-            const response=await axios({
-                method:"get",
-                url:"/api/user/wishlist",
-                headers:{authorization: token}
-            });
-            bookmarksDispatch({type:"FETCH_BOOKMARKS", payload:response.data.wishlist});
-
-        }catch(e){
-            console.log(e);
-        }
-
-    })();
-
+    fetchBookmarks(token, bookmarksDispatch);
 },[]);
 
 const items = 

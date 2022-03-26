@@ -33,4 +33,17 @@ const removeFromBookmarks=async(id ,token, toggler, dispatcher)=>{
   }
 }
 
-export {removeFromBookmarks, addToBookmarks};
+const fetchBookmarks=async(token, dispatcher)=>{
+    try{
+        const response=await axios({
+            method:"get",
+            url:"/api/user/wishlist",
+            headers:{authorization: token}
+        });
+        dispatcher({type:"FETCH_BOOKMARKS", payload:response.data.wishlist});
+    }catch(e){
+        console.log(e);
+    }
+}
+
+export {removeFromBookmarks, addToBookmarks, fetchBookmarks};
