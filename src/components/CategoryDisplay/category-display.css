@@ -15,4 +15,9 @@
     width: 4rem;
     height: 4rem;
     filter: invert(100%);
+    transition: 0.3s;
+}
+
+.category-icon:hover{
+    transform: scale(110%);
 }

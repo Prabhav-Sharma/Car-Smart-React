@@ -22,6 +22,7 @@ body>* {
 
 .prod-top-wrapper {
     gap: var(--sp-2);
+    justify-content: center;
 }
 
 .prod-img-container {
@@ -47,6 +48,7 @@ body>* {
 .dropdown {
     width: fit-content;
     position: relative;
+    align-self: center;
 }
 
 .dropdown-content {
@@ -80,8 +82,8 @@ body>* {
     gap: var(--sp-1);
 }
 
-.prod-bottom-wrapper {
-    margin-top: var(--sp-1);
+.category-wrapper {
+    margin-top: var(--sp-2);
     gap: var(--sp-1);
     justify-content: space-around;
 }
@@ -91,5 +93,8 @@ body>* {
     .prod-top-wrapper,
     .price-container {
         flex-direction: column;
+    }
+    .category-wrapper{
+        margin-top: 4rem;
     }
 }

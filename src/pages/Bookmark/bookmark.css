@@ -1,0 +1,18 @@
+
+.bookmark-main{
+    align-items: center;
+    margin-top: var(--sp-2);
+    gap:var(--sp-1);
+    color:var(--white);
+}
+
+.bookmark-heading{
+    color: var(--white)
+}
+
+.bookmark-grid {
+    max-width: 100%;
+    margin-top: var(--sp-2);
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap:var(--sp-2);
+}

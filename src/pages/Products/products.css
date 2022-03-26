@@ -13,14 +13,14 @@ body{
 }
 
 
-main{
+.products-main{
     display: grid;
     grid-template-columns: 17rem auto;
     padding-top: var(--sp-0-5);
     gap:4rem;
 }
 
-aside{
+.products-aside{
     gap:var(--sp-0-5);
     border-right: 1px solid var(--solid-gray);
     padding: var(--sp-0-25);
@@ -120,12 +120,12 @@ aside{
 }
 
 @media only screen and (max-width:900px){
-    main{
+    .products-main{
         display: grid;
         grid-template-columns: 0 auto;
     }
 
-   aside{
+    .products-aside{
        visibility:hidden;
    }
 

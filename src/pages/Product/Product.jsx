@@ -7,17 +7,14 @@ import "./product.css";
 import { useProducts } from '../../contexts/Providers/ProductProvider/ProductProvider';
 import loadingProduct from './loadingProduct';
 import CategoryDisplay from '../../components/CategoryDisplay/CategoryDisplay';
+import {BookmarkButton} from "../../components/BookmarkButton/BookmarkButton";
 import {MANUFACTURE_IMG, TYPE_IMG, MILEAGE_IMG, ENGINE_IMG, BHP_IMG, RATING_IMG, SEAT_IMG, TRANSMISSION_IMG, SERVICECOST_IMG} from "./CATEGORY_CONSTANTS";
-
 function Product() {
     const params= useParams();
     const [product, setProduct] = useState(loadingProduct);
-    const {id}= params;
     const {state, dispatch} = useProducts();
+    const {id}= params;
     const {EMI} = state;
-
-    
-
     const {title, price, rating, categoryName, src, brand, specs } = product;
     const {mileage,
         engine,
@@ -42,9 +39,9 @@ function Product() {
         })();
     }catch(e){
         alert("Whoops! this wasn't supposed to happen.");
+        console.log(e);
     }
     },[product.title]);
-    
 
 return (   
   <div className="prod-card">
@@ -56,7 +53,7 @@ return (
               <h2>{title}</h2>
               <h3>Ex Showroom Price:  {price.display}</h3>
               <div className='flex-column dropdown'>
-              <h4> EMI starting from ₹{Math.floor(price.computable/EMI)} for {EMI} months ▼ </h4>
+              <h4> EMI starting from ₹{Math.floor(price.computable/EMI).toLocaleString()} for {EMI} months ▼ </h4>
               <div className='dropdown-content'>
                   <button className='btn prim-btn' onClick={() => dispatch({ type: "EMI", EMI: 36 })}>3 years</button>
                   <button className='btn prim-btn' onClick={() => dispatch({ type: "EMI", EMI: 48 })}>4 years</button>
@@ -66,12 +63,12 @@ return (
               </div>
               </div>
               <div className=' flex-column btn-wrapper'>
-              <button className='btn product-btn prim-acc-btn'>Add to Compare</button>
+                  <BookmarkButton prod={product} classes={"btn product-btn prim-acc-btn"} />
               <button className='btn product-btn prim-btn'>Book Now</button>
               </div>
           </div>
       </div>
-      <div className=" grid auto-grid prod-bottom-wrapper">
+<div className=" grid auto-grid category-wrapper">
     <CategoryDisplay src={MANUFACTURE_IMG} value={brand} title={"Manufacturer"} />
     <CategoryDisplay src={TYPE_IMG} value={categoryName} title={"Type"} />
     <CategoryDisplay src={MILEAGE_IMG} value={mileage} title={"Mileage"} />

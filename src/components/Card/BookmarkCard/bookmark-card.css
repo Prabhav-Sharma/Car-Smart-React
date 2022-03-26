@@ -1,0 +1,40 @@
+.bookmark-card{
+    width: 31.5rem;
+    background-color: var(--cadet);
+    padding: var(--sp-0-5);
+    padding-right: var(--sp-1);
+    gap:var(--sp-1);
+    background-image: linear-gradient(to right, var(--cadet), var(--black));
+    border-radius: var(--sp-0-25);
+    border: 1px solid var(--solid-gray);
+    box-sizing: border-box;
+}
+
+.bookmark-img-container{
+    padding:2px;
+    max-width: 15rem;
+    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.bookmark-right{
+    width: calc(31.5rem - 15rem);
+    text-align: center;
+    justify-content: center;
+    gap: var(--sp-1);
+}
+
+.bookmark-btn{
+  font-size: 1rem;
+  width: 100%;
+  margin: var(--sp-0-5);
+  padding: var(--sp-0-25);  border: 1px solid var(--black);
+}
+
+.bookmark-btns>button:first-child{
+    color:var(--white);
+}
+
+.bookmark-text{
+    color:var(--white);
+    gap:var(--sp-0-5);
+}
