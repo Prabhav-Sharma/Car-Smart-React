@@ -1,7 +1,7 @@
 import React from 'react'
 import  "./category-display.css";
 
-function CategoryDisplay({src, title, value}) {
+function CategoryDisplay({src, title, value=""}) {
   return (
     <div className='flex-column spec-category-wrapper'>
     <img className='category-icon' src={src}/>

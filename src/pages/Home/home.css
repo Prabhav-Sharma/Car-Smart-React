@@ -1,108 +1,92 @@
-
 body {
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .home-main {
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-    gap: var(--sp-1);
-    margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sp-1);
+  margin: 0;
 }
 
 .top-wrapper {
-    gap: var(--sp-1);
-    justify-content: center;
+  gap: var(--sp-1);
+  justify-content: center;
 }
 
 .home-section {
-    padding: 0;
+  padding: 0;
 }
 
-a{
-    color: var(--black);
+a {
+  color: var(--black);
 }
-
 
 .prod-img {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .hero-img {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    max-width: 80vw;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 80vw;
+  align-items: center;
 }
 
-.hero-img>img {
-    border-radius: var(--sp-1);
-    max-width: 100%;
+.hero-img > img {
+  border-radius: var(--sp-1);
+  max-width: 100%;
 }
 
 .hero-img-text {
-    position: absolute;
-    bottom: 7%;
-    left: 20%;
-    color: var(--white);
-    font-size: 2em;
+  position: absolute;
+  bottom: 7%;
+  left: 20%;
+  color: var(--white);
+  font-size: 2em;
 }
 
 .arrival-wrapper {
-    gap: var(--sp-2);
-    height: max-content;
+  gap: var(--sp-2);
+  height: max-content;
 }
 
 [class*="card"]:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.search-input{
-    max-width: 30%;
+.search-input {
+  max-width: 30%;
 }
 
-
-@media only screen and (max-width:1200px) {   
-    .midtext-card:nth-child(3){
-        display: none;
-    }
+@media only screen and (max-width: 1200px) {
+  .midtext-card:nth-child(3) {
+    display: none;
+  }
 }
 
+@media only screen and (max-width: 880px) {
+  .hero-img-text {
+    font-size: 1em;
+  }
 
-@media only screen and (max-width:880px) {
+  .arrival-wrapper {
+    flex-direction: column;
+  }
 
-    .hero-img-text {
-        font-size: 1em;
-    }
-
-    .arrival-wrapper {
-        flex-direction: column;
-    }
-
-    .midtext-card:nth-child(4){
-        display: none;
-    }
+  .midtext-card:nth-child(4) {
+    display: none;
+  }
 }
 
-
-@media only screen and (max-width:500px) {
-
-    .search-input{
-        display: none;
-    }
-
-    nav{
-        justify-content: space-between;
-        width: 90%;
-    }
-
-    .midtext-card:nth-child(2){
-        display: none;
-    }
+@media only screen and (max-width: 500px) {
+  .midtext-card:nth-child(2) {
+    display: none;
+  }
 }

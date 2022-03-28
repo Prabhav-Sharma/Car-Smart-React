@@ -1,0 +1,59 @@
+.dropdown-wrapper {
+  position: relative;
+  align-self: center;
+  flex-basis: 35%;
+}
+
+.search-dropdown {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  min-width: 100%;
+  height: 10.5rem;
+  overflow-y: clip;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  margin-top: var(--sp-2);
+  border-radius: 5px;
+}
+
+.search-dropdown li {
+  color: var(--white);
+  background-color: var(--primary-color);
+  width: 100%;
+  margin: 0;
+  margin-top: 2px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.list-group {
+  width: 90%;
+}
+
+.dropdown-search {
+  background-image: url("https://res.cloudinary.com/carsmart/image/upload/v1647404723/icons/search_i9fe3a.png");
+  background-size: 1.2rem;
+  background-repeat: no-repeat;
+  background-position: 7px center;
+  padding-left: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .dropdown-wrapper {
+    flex-basis: 15rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .dropdown-wrapper {
+    flex-basis: 10rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .search-dropdown li {
+    width: 95%;
+  }
+}
