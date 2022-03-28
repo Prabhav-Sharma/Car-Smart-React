@@ -7,5 +7,6 @@ const RATING_IMG="https://res.cloudinary.com/carsmart/image/upload/v1648111972/i
 const SEAT_IMG="https://res.cloudinary.com/carsmart/image/upload/v1648107227/icons/seat_nxhpwp.png";
 const TRANSMISSION_IMG="https://res.cloudinary.com/carsmart/image/upload/v1648107226/icons/transmission_tps53s.png";
 const SERVICECOST_IMG="https://res.cloudinary.com/carsmart/image/upload/v1648107227/icons/service_cost_kkxoy0.png";
+const PRICE_IMG="https://res.cloudinary.com/carsmart/image/upload/v1648439564/icons/money_xrf1a3.png";
 
-export {MANUFACTURE_IMG, TYPE_IMG, MILEAGE_IMG, ENGINE_IMG, BHP_IMG, RATING_IMG, SEAT_IMG, TRANSMISSION_IMG, SERVICECOST_IMG};
+export {MANUFACTURE_IMG, TYPE_IMG, MILEAGE_IMG, ENGINE_IMG, BHP_IMG, RATING_IMG, SEAT_IMG, TRANSMISSION_IMG, SERVICECOST_IMG, PRICE_IMG};
