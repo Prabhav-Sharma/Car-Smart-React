@@ -1,4 +1,3 @@
-/* .compare-dropdown { */
 .dropdown-wrapper {
   position: relative;
   align-self: center;
@@ -42,7 +41,6 @@
 }
 
 @media screen and (max-width: 900px) {
-  /* .compare-dropdown { */
   .dropdown-wrapper {
     flex-basis: 15rem;
   }
