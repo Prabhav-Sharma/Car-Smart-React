@@ -52,6 +52,17 @@ a {
   font-size: 2em;
 }
 
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  background-color: var(--primary-color);
+  text-align: center;
+  color: var(--white);
+  padding: var(--sp-0-25);
+  border-radius: var(--sp-0-25);
+  font-size: 1.25rem;
+}
 .arrival-wrapper {
   gap: var(--sp-2);
   height: max-content;

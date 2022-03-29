@@ -20,6 +20,7 @@ const Router = () => {
       <Route path="/mockman" element={<MockAPI />} />
       <Route path="/compare" element={<Compare />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:categoryName" element={<Products />} />
       <Route path="/product/:id" element={<Product />} />
       <Route element={<GuestRoutes />}>
         <Route path="/login" element={<Login />} />
