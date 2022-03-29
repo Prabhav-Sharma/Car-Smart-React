@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import MockAPI from "../mockman";
 import Home from "../pages/Home/Home";
-import Booking from "../pages/Cart/Cart";
 import Compare from "../pages/Compare/Compare";
 import Products from "../pages/Products/Products";
 import Product from "../pages/Product/Product";
