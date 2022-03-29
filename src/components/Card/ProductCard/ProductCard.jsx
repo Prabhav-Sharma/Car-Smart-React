@@ -27,12 +27,6 @@ function ProductCard({ info, EMI }) {
       <div className="card-btns flex-row">
         <BookmarkButton classes={"btn prim-acc-btn"} prod={info.prod} />
         <CartButton prod={info.prod} classes={"btn prim-btn"} />
-        {/* <button
-          className="btn prim-btn"
-          onClick={() => addToCart(localStorage.getItem("token"), info.prod)}
-        >
-          Book Now
-        </button> */}
       </div>
     </div>
   );
