@@ -19,6 +19,7 @@ import {
   TRANSMISSION_IMG,
   SERVICECOST_IMG,
 } from "./CATEGORY_IMAGES";
+import CartButton from "../../components/CartButton/CartButton";
 
 function Product() {
   const params = useParams();
@@ -103,7 +104,11 @@ function Product() {
               prod={product}
               classes={"btn product-btn prim-acc-btn"}
             />
-            <button className="btn product-btn prim-btn">Book Now</button>
+            <CartButton
+              prod={product}
+              classes={"btn product-btn prim-btn"}
+              btnText={"Remove from cart"}
+            />
           </div>
         </div>
       </div>
