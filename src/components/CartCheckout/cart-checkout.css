@@ -1,0 +1,18 @@
+.checkout-container {
+  background-color: var(--white);
+  border: 1px solid var(--secondary-color);
+  gap: var(--sp-1-5);
+  height: max-content;
+  padding: var(--sp-0-75);
+  width: 90%;
+  flex-grow: 1;
+}
+
+.checkout-container > span {
+  justify-content: space-between;
+}
+
+.checkout-container > button {
+  align-self: center;
+  width: 100%;
+}
