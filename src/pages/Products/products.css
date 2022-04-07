@@ -20,10 +20,10 @@ body {
 
 .products-aside {
   gap: var(--sp-0-5);
-  border-right: 1px solid var(--solid-gray);
+  border: 1px solid var(--solid-gray);
   padding: var(--sp-0-25);
   padding-right: var(--sp-1);
-  background-color: var(--primary-color);
+  background-color: var(--black);
   color: var(--white);
   border-radius: var(--sp-0-5);
   height: max-content;
@@ -37,7 +37,7 @@ body {
 
 .clear-btn:hover {
   cursor: pointer;
-  color: var(--black);
+  color: var(--color-primary-lighter);
 }
 
 .range-input {
@@ -80,15 +80,9 @@ body {
 }
 
 .product-grid {
-  grid-template-columns: repeat(auto-fill, 16rem);
+  grid-template-columns: repeat(auto-fill, 18rem);
+  justify-content: space-evenly;
   gap: var(--sp-1-5);
-}
-
-.card {
-  flex-basis: 14rem;
-  outline: none;
-  border: 1px solid var(--solid-gray);
-  margin-right: var(--sp-0-5);
 }
 
 .card > * {
@@ -122,22 +116,22 @@ body {
 @media only screen and (max-width: 900px) {
   .products-main {
     display: grid;
-    grid-template-columns: 0 auto;
+    grid-template-columns: 1fr 6fr;
   }
 
-  .products-aside {
+  /* .products-aside {
     visibility: hidden;
-  }
+  } */
 
   .product-grid {
-    grid-template-columns: repeat(auto-fill, 15rem);
     gap: var(--sp-1);
+    justify-content: flex-start;
   }
 }
 
 @media only screen and (max-width: 560px) {
   html {
-    font-size: 80%;
+    font-size: 75%;
   }
 
   .product-grid {
@@ -147,6 +141,6 @@ body {
 
 @media only screen and (max-width: 400px) {
   html {
-    font-size: 70%;
+    font-size: 60%;
   }
 }

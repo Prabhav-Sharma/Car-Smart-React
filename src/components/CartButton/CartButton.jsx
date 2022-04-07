@@ -6,25 +6,27 @@ import {
 } from "../../contexts/Providers/UserDataProvider/helpers";
 import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
 import { useLoading } from "../../hooks/useLoading";
+import { toast } from "react-toastify";
 
 function CartButton({ prod, classes, btnText = "Remove" }) {
   const { userDataState, userDataDispatch } = useUserData();
-  const { authState } = useAuth();
+  const {
+    authState: { isAuthenticated, token },
+  } = useAuth();
   const { loading: cartLoading, setLoading: setCartLoading } = useLoading();
   const { cart } = userDataState;
-  const token = localStorage.getItem("token");
 
   const addItemToCart = () => {
-    if (!authState.isAuthenticated) {
-      alert("Need to login first");
+    if (!isAuthenticated) {
+      toast.info("Need to login first");
       return;
     }
     addToCart(token, prod, setCartLoading, userDataDispatch);
   };
 
   const removeItemFromCart = () => {
-    if (!authState.isAuthenticated) {
-      alert("Need to login first");
+    if (!isAuthenticated) {
+      toast.info("Need to login first");
       return;
     }
     deleteFromCart(token, prod._id, userDataDispatch, setCartLoading);

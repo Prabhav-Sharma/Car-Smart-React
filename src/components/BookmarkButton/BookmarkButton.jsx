@@ -6,24 +6,30 @@ import {
   removeFromBookmarks,
   addToBookmarks,
 } from "../../contexts/Providers/UserDataProvider/helpers";
+import { toast } from "react-toastify";
 
 function BookmarkButton({ prod, classes }) {
-  const { authState } = useAuth();
+  const {
+    authState: { token, isAuthenticated },
+  } = useAuth();
   const { loading: bookmarkLoading, setLoading: setBookmarkLoading } =
     useLoading();
   const { userDataState, userDataDispatch } = useUserData();
   const { bookmarks } = userDataState;
-  const token = localStorage.getItem("token");
 
   const addBookmarkHandler = (product) => {
-    if (!authState.isAuthenticated) {
-      alert("Need to login first");
+    if (!isAuthenticated) {
+      toast.info("Need to login first");
       return;
     }
     addToBookmarks(product, token, setBookmarkLoading, userDataDispatch);
   };
 
   const removeBookmarkHandler = (id) => {
+    if (!isAuthenticated) {
+      toast.info("Need to login first");
+      return;
+    }
     removeFromBookmarks(id, token, setBookmarkLoading, userDataDispatch);
   };
 

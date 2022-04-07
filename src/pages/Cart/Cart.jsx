@@ -4,16 +4,18 @@ import { fetchCart } from "../../contexts/Providers/UserDataProvider/helpers";
 import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
 import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 import { useNavigate } from "react-router-dom";
-import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
 import "./cart.css";
 import CartCheckout from "../../components/CartCheckout/CartCheckout";
+import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
 
 function Cart() {
   const { userDataState, userDataDispatch } = useUserData();
   const { cart } = userDataState;
 
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+  const {
+    authState: { token },
+  } = useAuth();
 
   useDocumentTitle("Cart | CarSmart");
 

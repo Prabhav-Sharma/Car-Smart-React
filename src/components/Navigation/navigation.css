@@ -5,10 +5,13 @@
 nav {
   justify-content: space-evenly;
   gap: var(--sp-1);
-  width: 96vw;
-  padding: var(--sp-0-25) var(--sp-1);
+  max-width: 100vw;
+  padding: var(--sp-0-5) var(--sp-1);
   align-items: center;
-  background-color: transparent;
+  background-color: var(--cadet);
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-bottom: var(--sp-0-75);
 }
 
 .nav-title {
@@ -61,6 +64,14 @@ nav {
   nav {
     width: 100vw;
     font-size: 75%;
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  nav {
+    width: 100vw;
+    font-size: 60%;
     gap: 0;
   }
 }
