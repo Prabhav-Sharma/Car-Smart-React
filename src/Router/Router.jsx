@@ -9,7 +9,6 @@ import Login from "../pages/Authentication/Login";
 import Signup from "../pages/Authentication/Signup";
 import Bookmark from "../pages/Bookmark/Bookmark";
 import Cart from "../pages/Cart/Cart";
-import { GuestRoutes } from "./GuestRoutes";
 import { ProtectedRoutes } from "./ProtectedRoutes";
 
 const Router = () => {
@@ -21,10 +20,8 @@ const Router = () => {
       <Route path="/products" element={<Products />} />
       <Route path="/products/:categoryName" element={<Products />} />
       <Route path="/product/:id" element={<Product />} />
-      <Route element={<GuestRoutes />}>
-        <Route path="/login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/Signup" element={<Signup />} />
       <Route element={<ProtectedRoutes />}>
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/cart" element={<Cart />} />
