@@ -20,7 +20,6 @@ function Products() {
   }, [categoryName]);
 
   const { products, category, sortBy, rating, EMI, filterPrice } = state;
-  console.log("category", category);
 
   useDocumentTitle("Products | CarSmart");
 

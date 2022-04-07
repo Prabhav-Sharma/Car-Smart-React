@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./product-search.css";
 import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
+import { toast } from "react-toastify";
 
 function ProductSearch({ prodFunc, classes }) {
   const { state: productsState, dispatch: productsDispatch } = useProducts();
@@ -14,6 +15,7 @@ function ProductSearch({ prodFunc, classes }) {
         const response = await axios("/api/products");
         productsDispatch({ type: "FETCH", payload: response.data.products });
       } catch (e) {
+        toast.error("Uh oh, something broke :/");
         console.log(e);
       }
     })();
@@ -39,7 +41,6 @@ function ProductSearch({ prodFunc, classes }) {
   ));
 
   return (
-    // <div className="flex-column compare-dropdown">
     <div className="flex-column dropdown-wrapper">
       <input
         className={`form-input input-m input-round-border dropdown-search ${classes}`}

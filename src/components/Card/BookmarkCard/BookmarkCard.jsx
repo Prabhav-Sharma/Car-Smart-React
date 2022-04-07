@@ -4,12 +4,17 @@ import { Link } from "react-router-dom";
 import { useUserData } from "../../../contexts/Providers/UserDataProvider/UserDataProvider";
 import { useLoading } from "../../../hooks/useLoading";
 import { removeFromBookmarks } from "../../../contexts/Providers/UserDataProvider/helpers";
+import CartButton from "../../CartButton/CartButton";
+import { useAuth } from "../../../contexts/Providers/AuthProvider/AuthProvider";
 
 function BookmarkCard({ prod }) {
   const { userDataDispatch } = useUserData();
   const { loading: bookmarkLoading, setLoading: setBookmarkLoading } =
     useLoading();
-  const token = localStorage.getItem("token");
+
+  const {
+    authState: { token },
+  } = useAuth();
 
   const removeBookmarkHandler = (id) => {
     removeFromBookmarks(id, token, setBookmarkLoading, userDataDispatch);
@@ -19,8 +24,11 @@ function BookmarkCard({ prod }) {
   return (
     <div className="bookmark-card flex-row">
       <div className="bookmark-img-container">
-        <img src={src} />
+        <Link to={`/product/${_id}`}>
+          <img src={src} />
+        </Link>
       </div>
+
       <div className="bookmark-right flex-column">
         <div className="bookmark-text flex-column">
           <h3>{title}</h3>
@@ -37,9 +45,11 @@ function BookmarkCard({ prod }) {
               "Remove From Bookmarks"
             )}
           </button>
-          <Link to={`/product/${_id}`}>
-            <button className="bookmark-btn btn prim-btn"> See Details</button>
-          </Link>
+          <CartButton
+            classes={"btn bookmark-btn prim-btn"}
+            prod={prod}
+            btnText={"Remove from Cart"}
+          />
         </div>
       </div>
     </div>

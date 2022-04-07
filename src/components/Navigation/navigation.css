@@ -67,3 +67,11 @@ nav {
     gap: 0;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  nav {
+    width: 100vw;
+    font-size: 60%;
+    gap: 0;
+  }
+}

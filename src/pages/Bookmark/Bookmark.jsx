@@ -6,11 +6,14 @@ import BookmarkCard from "../../components/Card/BookmarkCard/BookmarkCard";
 import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
 import { fetchBookmarks } from "../../contexts/Providers/UserDataProvider/helpers";
+import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
 
 function Bookmark() {
   const { userDataState, userDataDispatch } = useUserData();
   const { bookmarks } = userDataState;
-  const token = localStorage.getItem("token");
+  const {
+    authState: { token },
+  } = useAuth();
 
   useDocumentTitle("Bookmarks | CarSmart");
 

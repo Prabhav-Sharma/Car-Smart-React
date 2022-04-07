@@ -3,8 +3,8 @@
     background-color: var(--cadet);
     gap: var(--sp-2);
     width: fit-content;
-    height: max-content;
-    max-width: max-content;
+    height: inherit;
+    width: 35rem;
 }
 
 .arrival-card-text {

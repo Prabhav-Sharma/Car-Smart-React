@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./product-card.css";
 import { BookmarkButton } from "../../BookmarkButton/BookmarkButton";
-import { addToCart } from "../../../contexts/Providers/UserDataProvider/helpers";
 import CartButton from "../../CartButton/CartButton";
 
 function ProductCard({ info, EMI }) {

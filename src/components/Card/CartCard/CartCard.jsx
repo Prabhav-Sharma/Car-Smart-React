@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./cart-card.css";
 import { Link } from "react-router-dom";
 import {
@@ -7,13 +7,15 @@ import {
 } from "../../../contexts/Providers/UserDataProvider/helpers";
 import { useUserData } from "../../../contexts/Providers/UserDataProvider/UserDataProvider";
 import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+import { useAuth } from "../../../contexts/Providers/AuthProvider/AuthProvider";
 
 function CartCard({ prod }) {
   const { userDataDispatch } = useUserData();
   const { _id, title, src, qty, price } = prod;
   const { computable } = price;
-  const token = localStorage.getItem("token");
-
+  const {
+    authState: { token },
+  } = useAuth();
   useDocumentTitle("Cart | CarSmart");
 
   const increaseQuantity = () => {
@@ -21,16 +23,14 @@ function CartCard({ prod }) {
   };
 
   const decreaseQuantity = () => {
-    changeItemQuantityInCart(token, _id, "decrement", userDataDispatch);
+    qty <= 1
+      ? removeItem()
+      : changeItemQuantityInCart(token, _id, "decrement", userDataDispatch);
   };
 
   const removeItem = () => {
     deleteFromCart(token, _id, userDataDispatch);
   };
-
-  if (qty <= 0) {
-    removeItem();
-  }
 
   return (
     <div className="cart-card flex-row">

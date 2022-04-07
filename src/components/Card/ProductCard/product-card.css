@@ -1,8 +1,9 @@
 .card{
-    flex-basis: 14rem;
+    flex-basis: 15rem;
     outline: none;
     border: 1px solid var(--solid-gray);
     margin-right: var(--sp-0-5);
+    width: 18rem;
 }
 
 .card>*{
