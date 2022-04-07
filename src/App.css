@@ -1,4 +1,5 @@
 @import url("/node_modules/mockman-js/dist/style.css");
+@import url('react-toastify/dist/ReactToastify.css');
 
 html{
     background-image: url("https://res.cloudinary.com/carsmart/image/upload/v1647405390/UI%20Images/main_dc04uo.jpg");
