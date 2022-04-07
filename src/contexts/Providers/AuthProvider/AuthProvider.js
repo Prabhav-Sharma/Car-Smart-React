@@ -1,19 +1,24 @@
-import {createContext, useContext, useReducer} from "react";
-import {authReducer} from "./authReducer"
+import { createContext, useContext, useReducer } from "react";
+import { authReducer } from "./authReducer";
 
-const AuthContext =  createContext({});
+const AuthContext = createContext({});
 
 const initialAuthState = {
-    isAuthenticated:localStorage.getItem("token") ?true:false,
-    user:{}
-}
+  isAuthenticated: localStorage.getItem("token") ? true : false,
+  user: {},
+  token: localStorage.getItem("token"),
+};
 
-const AuthProvider=({children})=>{
- const [authState, authDispatch]= useReducer(authReducer, initialAuthState);
+const AuthProvider = ({ children }) => {
+  const [authState, authDispatch] = useReducer(authReducer, initialAuthState);
 
-    return <AuthContext.Provider value={{authState, authDispatch}}>{children}</AuthContext.Provider>
-}
+  return (
+    <AuthContext.Provider value={{ authState, authDispatch }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
 
-const useAuth=()=> useContext(AuthContext);
+const useAuth = () => useContext(AuthContext);
 
-export {AuthProvider, useAuth};
+export { AuthProvider, useAuth };
