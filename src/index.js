@@ -3,24 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
-import {BrowserRouter} from "react-router-dom";
-import { ProductsProvider } from "./contexts/Providers/ProductProvider/ProductProvider";
-import { AuthProvider } from "./contexts/Providers/AuthProvider/AuthProvider";
-import {UserDataProvider} from "./contexts/Providers/UserDataProvider/UserDataProvider";
+import Contexts from "./contexts/Providers/ContextsProvider";
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-    <BrowserRouter>
-    <ProductsProvider>
-    <UserDataProvider>
-    <App />
-    </UserDataProvider>
-    </ProductsProvider>
-    </BrowserRouter>
-    </AuthProvider>
+    <Contexts>
+      <App />
+    </Contexts>
   </React.StrictMode>,
   document.getElementById("root")
 );

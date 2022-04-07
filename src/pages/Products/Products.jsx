@@ -1,22 +1,26 @@
 import React from "react";
 import ProductCard from "../../components/Card/ProductCard/ProductCard";
 import "./products.css";
-import {useEffect} from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
-import {useDocumentTitle} from "../../hooks/useDocumentTitle";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+import { useParams } from "react-router-dom";
 
 function Products() {
-  const {state, dispatch, filteredProducts} = useProducts();
+  const { state, dispatch, filteredProducts } = useProducts();
+  const params = useParams();
+  const { categoryName } = params;
 
-  const {
-    products,
-    category,
-    sortBy,
-    rating,
-    EMI,
-    filterPrice,
-  } = state;
+  useEffect(() => {
+    if (categoryName !== undefined) {
+      dispatch({ type: "CATEGORY", category: categoryName });
+    }
+    return () => dispatch({ type: "CLEAR" });
+  }, [categoryName]);
+
+  const { products, category, sortBy, rating, EMI, filterPrice } = state;
+  console.log("category", category);
 
   useDocumentTitle("Products | CarSmart");
 
