@@ -15,7 +15,7 @@ const cartCalc = (cart, interestRate, EMITenure) => {
 
   const cartDiscount = Math.floor(cartMRP * 0.012);
 
-  const downPayment = Math.floor((cartMRP - cartDiscount) * 0.1);
+  const downPayment = Math.floor((cartMRP - cartDiscount) * 0.01);
 
   const principalAmount = cartMRP - downPayment - cartDiscount;
 
@@ -28,7 +28,7 @@ const cartCalc = (cart, interestRate, EMITenure) => {
   return {
     cartMRP: cartMRP.toLocaleString(),
     cartDiscount: cartDiscount.toLocaleString(),
-    downPayment: downPayment.toLocaleString(),
+    downPayment,
     cartEMI: cartEMI.toLocaleString(),
     totalInterest: totalInterest.toLocaleString(),
     finalAmount: finalAmount.toLocaleString(),
