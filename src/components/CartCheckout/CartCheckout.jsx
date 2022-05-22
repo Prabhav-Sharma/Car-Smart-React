@@ -61,7 +61,7 @@ function CartCheckout({ address }) {
       currency: "INR",
       amount: downPayment * 100,
       name: "CarSmart",
-      description: "Order Vehicle(s)",
+      description: "Book your ride",
       handler: async function (response) {
         const paymentId = response.razorpay_payment_id;
         const orderId = uuid();

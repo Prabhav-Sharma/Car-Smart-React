@@ -18,6 +18,14 @@ const addressModalReducer = (state, action) => {
       return { ...state, phone: action.payload };
     case "PIN":
       return { ...state, pin: action.payload };
+
+    case "RESET":
+      return {
+        name: "",
+        location: "",
+        phone: "",
+        pin: "",
+      };
     default:
       return state;
   }
@@ -42,7 +50,10 @@ function AddressModal({ showModalState }) {
 
   const addAddressHandler = async () => {
     const status = await addAddress({ ...modalState }, token, userDataDispatch);
-    status === "SUCCESS" && setShowAddressModal(false);
+    if (status === "SUCCESS") {
+      modalDispatch({ type: "RESET" });
+      setShowAddressModal(false);
+    }
   };
 
   return reactDom.createPortal(
