@@ -6,6 +6,12 @@ export const userDataReducer = (state, action) => {
     case "UPDATE_CART":
       return { ...state, cart: action.payload.cart };
 
+    case "UPDATE_ORDERS":
+      return { ...state, orders: action.payload.orders };
+
+    case "UPDATE_ADDRESS_LIST":
+      return { ...state, addressList: action.payload.addressList };
+
     default:
       return state;
 
