@@ -25,6 +25,7 @@
     padding: var(--sp-0-5);
     gap:var(--sp-0-75);
     padding-bottom: var(-sp-0-75);
+    z-index: 20;
 }
 
 .location{
