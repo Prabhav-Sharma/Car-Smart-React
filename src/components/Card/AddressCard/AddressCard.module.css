@@ -1,0 +1,27 @@
+.card_wrapper{
+    padding: var(--sp-0-75);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    max-width: 14rem;
+    gap:var(--sp-0-5);
+    border-radius: var(--sp-0-5);
+}
+
+.name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 28ch;
+    font-size: 1rem;
+}
+
+.location{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 28ch;
+}
+
+.phone{
+   font-size: 1rem;
+}
