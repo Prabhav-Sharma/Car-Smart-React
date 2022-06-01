@@ -9,6 +9,7 @@ import Login from "../pages/Authentication/Login";
 import Signup from "../pages/Authentication/Signup";
 import Bookmark from "../pages/Bookmark/Bookmark";
 import Cart from "../pages/Cart/Cart";
+import Order from "../pages/Order/Order";
 import { ProtectedRoutes } from "./ProtectedRoutes";
 
 const Router = () => {
@@ -25,6 +26,7 @@ const Router = () => {
       <Route element={<ProtectedRoutes />}>
         <Route path="/bookmark" element={<Bookmark />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order/:orderId" element={<Order />} />
       </Route>
     </Routes>
   );
