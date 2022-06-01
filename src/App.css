@@ -1,9 +1,11 @@
 @import url("/node_modules/mockman-js/dist/style.css");
 @import url('react-toastify/dist/ReactToastify.css');
+:root{
+  --cadet:#1f2937;
+}
 
 html{
-    background-image: url("https://res.cloudinary.com/carsmart/image/upload/v1647405390/UI%20Images/main_dc04uo.jpg");
-    background-size: 250%;
+    background-image: linear-gradient(to right, black, var(--cadet));
     min-width: max-content;
 }
 
@@ -14,3 +16,16 @@ button.btn.prim-btn:hover, button.btn.prim-acc-btn:hover{
 button.btn.prim-acc.btn:hover{
     background-color: whitesmoke;
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--black);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--sp-2);
+  }
