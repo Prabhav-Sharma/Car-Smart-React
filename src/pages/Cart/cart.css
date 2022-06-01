@@ -27,8 +27,9 @@
   color: var(--white);
   border-radius: var(--sp-0-75);
   padding: var(--sp-0-75);
-  min-height: 8rem;
+  height: 10rem;
   justify-self: center;
+  align-self: center;
 }
 
 div.selected-address{
