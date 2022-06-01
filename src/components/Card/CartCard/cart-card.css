@@ -49,6 +49,7 @@
   background-color: var(--white);
   height: max-content;
   color: var(--black);
+  margin-left: var(--sp-0-25);
 }
 
 .fab-btn {

@@ -9,7 +9,7 @@ import { useUserData } from "../../../contexts/Providers/UserDataProvider/UserDa
 import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 import { useAuth } from "../../../contexts/Providers/AuthProvider/AuthProvider";
 
-function CartCard({ prod }) {
+function CartCard({ prod, dynamic = true }) {
   const { userDataDispatch } = useUserData();
   const { _id, title, src, qty, price } = prod;
   const { computable } = price;
@@ -42,29 +42,37 @@ function CartCard({ prod }) {
           <h4 className="item-title">{title}</h4>
           <div className="item-actions-wrapper flex-row">
             <h5>Qty: </h5>
-            <button
-              className="fab-btn flex-column"
-              onClick={() => decreaseQuantity()}
-            >
-              <img
-                className="fab-icon"
-                src="https://res.cloudinary.com/carsmart/image/upload/v1648460321/icons/minus-sign_vynjuq.png"
-              />
-            </button>
+            {dynamic && (
+              <button
+                className="fab-btn flex-column"
+                onClick={() => decreaseQuantity()}
+              >
+                <img
+                  className="fab-icon"
+                  src="https://res.cloudinary.com/carsmart/image/upload/v1648460321/icons/minus-sign_vynjuq.png"
+                />
+              </button>
+            )}
             <span className="item-quantity">{qty}</span>
-            <button
-              className="fab-btn flex-column item-action"
-              onClick={() => increaseQuantity()}
-            >
-              <img
-                className="fab-icon"
-                src="https://res.cloudinary.com/carsmart/image/upload/v1648460320/icons/plus_iisvhs.png"
-              />
-            </button>
-            <span> | </span>
-            <h5 className="item-action" onClick={() => removeItem()}>
-              Remove
-            </h5>
+            {dynamic && (
+              <button
+                className="fab-btn flex-column item-action"
+                onClick={() => increaseQuantity()}
+              >
+                <img
+                  className="fab-icon"
+                  src="https://res.cloudinary.com/carsmart/image/upload/v1648460320/icons/plus_iisvhs.png"
+                />
+              </button>
+            )}
+            {dynamic && (
+              <>
+                <span> | </span>
+                <h5 className="item-action" onClick={() => removeItem()}>
+                  Remove
+                </h5>
+              </>
+            )}
           </div>
         </div>
       </div>
