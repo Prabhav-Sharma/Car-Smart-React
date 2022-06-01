@@ -10,6 +10,7 @@ import {
   clearCart,
 } from "../../contexts/Providers/UserDataProvider/helpers";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function CartCheckout({ address }) {
   const { name, phone } = address;
@@ -17,6 +18,7 @@ function CartCheckout({ address }) {
   const { state } = useProducts();
   const { cart } = userDataState;
   const { EMI: EMITenure } = state;
+  const navigate = useNavigate();
   const {
     authState: { token },
   } = useAuth();
@@ -75,13 +77,14 @@ function CartCheckout({ address }) {
         };
         await addOrder(order, token, userDataDispatch);
         await clearCart(token, userDataDispatch);
+        navigate(`/order/${orderId}`);
 
         toast.success("Order Successful");
       },
 
       prefill: {
         name: name,
-        email: "chandler.bing@friends.com",
+        email: "test@email.com",
         contact: phone,
       },
     };
