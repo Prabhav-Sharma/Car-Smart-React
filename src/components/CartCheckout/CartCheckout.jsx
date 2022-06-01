@@ -4,7 +4,6 @@ import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataP
 import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
 import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
 import "./cart-checkout.css";
-import { v4 as uuid } from "uuid";
 import {
   addOrder,
   clearCart,
@@ -66,7 +65,7 @@ function CartCheckout({ address }) {
       description: "Book your ride",
       handler: async function (response) {
         const paymentId = response.razorpay_payment_id;
-        const orderId = uuid();
+        const orderId = String(Math.floor(Math.random() * 10000));
 
         const order = {
           paymentId,
