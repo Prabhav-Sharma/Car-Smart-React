@@ -28,11 +28,12 @@
   border-radius: var(--sp-0-75);
   padding: var(--sp-0-75);
   min-height: 8rem;
-   justify-self: center;
+  justify-self: center;
 }
 
-.selected-address{
-  border:3px solid var(--primary-color);
+div.selected-address{
+  border:3.5px solid var(--primary-color);
+
 }
 
 .cart-sub-heading{
