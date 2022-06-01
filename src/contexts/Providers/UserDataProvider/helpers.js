@@ -164,7 +164,6 @@ const fetchOrderById = async (orderId, token, dispatcher) => {
       url: `/api/order/${orderId}`,
       headers: { authorization: token },
     });
-    console.log(response);
     dispatcher(response.data.order);
   } catch (error) {
     console.log(error);
