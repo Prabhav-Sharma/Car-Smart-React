@@ -5,6 +5,7 @@ import {
 } from "./backend/controllers/AuthController";
 import {
   addItemToCartHandler,
+  clearCartHandler,
   getCartItemsHandler,
   removeItemFromCartHandler,
   updateCartItemHandler,
@@ -22,11 +23,26 @@ import {
   getWishlistItemsHandler,
   removeItemFromWishlistHandler,
 } from "./backend/controllers/WishlistController";
+
+import {
+  fetchOrdersHandler,
+  fetchOrderByIdHandler,
+  addOrderHandler,
+} from "./backend/controllers/OrderController";
+
+import {
+  getAddressListHandler,
+  addAddressHandler,
+  removeAddressHandler,
+  updateAddressHandler,
+} from "./backend/controllers/AddressController";
+
 import { categories } from "./backend/db/categories";
 import { products } from "./backend/db/products";
 import { users } from "./backend/db/users";
 
 export function makeServer({ environment = "development" } = {}) {
+  const razorpay = require("razorpay");
   return new Server({
     serializers: {
       application: RestSerializer,
@@ -38,6 +54,8 @@ export function makeServer({ environment = "development" } = {}) {
       user: Model,
       cart: Model,
       wishlist: Model,
+      orders: Model,
+      addresses: Model,
     },
 
     // Runs on the start of the server
@@ -49,7 +67,13 @@ export function makeServer({ environment = "development" } = {}) {
       });
 
       users.forEach((item) =>
-        server.create("user", { ...item, cart: [], wishlist: [] })
+        server.create("user", {
+          ...item,
+          cart: [],
+          wishlist: [],
+          orders: [],
+          addressList: [],
+        })
       );
 
       categories.forEach((item) => server.create("category", { ...item }));
@@ -77,6 +101,7 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/cart/:productId",
         removeItemFromCartHandler.bind(this)
       );
+      this.delete("/user/cart", clearCartHandler.bind(this));
 
       // wishlist routes (private)
       this.get("/user/wishlist", getWishlistItemsHandler.bind(this));
@@ -85,6 +110,34 @@ export function makeServer({ environment = "development" } = {}) {
         "/user/wishlist/:productId",
         removeItemFromWishlistHandler.bind(this)
       );
+
+      // addresse routes (private)
+      this.get("/user/address", getAddressListHandler.bind(this));
+      this.post("/user/address", addAddressHandler.bind(this));
+      this.post("/user/address/:addressId", updateAddressHandler.bind(this));
+      this.delete("/user/address/:addressId", removeAddressHandler.bind(this));
+
+      //orders
+      this.get("/orders", fetchOrdersHandler.bind(this));
+      this.get("/order/:orderId", fetchOrderByIdHandler.bind(this));
+      this.post("/order", addOrderHandler.bind(this));
+
+      this.post("/orders", async (req, res) => {
+        try {
+          const instance = new razorpay({
+            key_id: process.env.REACT_APP_RAZORPAY_ID,
+            key_secret: process.env.REACT_APP_RAZORPAY_SECRET,
+          });
+          const options = {
+            amount: 100, //amount in smallest currency unit, which is paisa for INR
+            currency: "INR",
+          };
+          const order = instance.orders.create(options);
+          res.json(order);
+        } catch (error) {
+          console.log(error);
+        }
+      });
     },
   });
 }

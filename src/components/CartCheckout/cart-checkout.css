@@ -5,7 +5,7 @@
   height: max-content;
   padding: var(--sp-0-75);
   width: 90%;
-  flex-grow: 1;
+  max-width: 40rem;
 }
 
 .checkout-container > span {
@@ -16,3 +16,12 @@
   align-self: center;
   width: 100%;
 }
+
+
+@media screen and (max-width:1000px) {
+  .checkout-container{
+  place-self: center;
+}
+}
+
+

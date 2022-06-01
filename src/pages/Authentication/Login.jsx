@@ -41,6 +41,7 @@ function Login() {
         email: email,
         password: password,
       });
+
       localStorage.setItem("token", response.data.encodedToken);
       authDispatch({
         type: "LOGIN",

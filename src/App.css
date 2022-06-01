@@ -6,3 +6,11 @@ html{
     background-size: 250%;
     min-width: max-content;
 }
+
+button.btn.prim-btn:hover, button.btn.prim-acc-btn:hover{
+    transform: none;
+}
+
+button.btn.prim-acc.btn:hover{
+    background-color: whitesmoke;
+}
