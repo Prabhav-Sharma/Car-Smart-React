@@ -1,4 +1,5 @@
 import { Server, Model, RestSerializer } from "miragejs";
+import { v4 as uuid } from "uuid";
 import {
   loginHandler,
   signupHandler,
@@ -60,7 +61,7 @@ export function makeServer({ environment = "development" } = {}) {
 
     // Runs on the start of the server
     seeds(server) {
-      // disballing console logs from Mirage
+      // disablling console logs from Mirage
       server.logging = false;
       products.forEach((item) => {
         server.create("product", { ...item });
@@ -72,7 +73,16 @@ export function makeServer({ environment = "development" } = {}) {
           cart: [],
           wishlist: [],
           orders: [],
-          addressList: [],
+          addressList: [
+            {
+              _id: uuid(),
+              name: "Sherlock Holmes",
+              location: "221B, Baker St, London",
+              phone: "9754127859",
+              pin: "NW1 6XE",
+              country: "United Kingdom",
+            },
+          ],
         })
       );
 

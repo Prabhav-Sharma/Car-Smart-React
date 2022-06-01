@@ -35,8 +35,8 @@ export const addAddressHandler = function (schema, request) {
     }).addressList;
     const { address } = JSON.parse(request.requestBody);
     userAddressList.push({
-      ...address,
       _id: uuid(),
+      ...address,
       createdAt: formatDate(),
       updatedAt: formatDate(),
     });
