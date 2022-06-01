@@ -1,0 +1,5 @@
+.success_msg{
+    color:var(--white);
+    text-align: center;
+    font-size: var(--sp-1-5);
+}
