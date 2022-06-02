@@ -29,7 +29,6 @@ export const fetchOrderByIdHandler = function (schema, request) {
       );
     }
     const paramOrderId = request.params.orderId;
-    console.log(paramOrderId);
     const order = schema.users
       .findBy({ _id: userId })
       .orders.find((order) => order.orderId === paramOrderId);

@@ -55,7 +55,7 @@ function Order() {
           </h3>
           <div className={styles.error_img_container}>
             <img
-              classname={styles.error_img}
+              className={styles.error_img}
               src="https://res.cloudinary.com/carsmart/image/upload/v1654091182/UI%20Images/bug_fixing_oc-7-a_oide3h.svg"
               alt="Bug Fixing Image"
             />
