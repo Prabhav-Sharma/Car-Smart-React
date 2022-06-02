@@ -113,15 +113,16 @@ body {
   font-size: 1rem;
 }
 
+.no-products-msg{
+  text-align: center;
+  color:var(--white);
+}
+
 @media only screen and (max-width: 900px) {
   .products-main {
     display: grid;
     grid-template-columns: 1fr 6fr;
   }
-
-  /* .products-aside {
-    visibility: hidden;
-  } */
 
   .product-grid {
     gap: var(--sp-1);

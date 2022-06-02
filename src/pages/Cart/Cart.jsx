@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import CartCard from "../../components/Card/CartCard/CartCard";
+import { useEffect, useState } from "react";
+import { useUserData, useAuth, useDocumentTitle } from "../../hooks";
+import { useNavigate } from "react-router-dom";
+import {
+  CartCheckout,
+  AddressCard,
+  AddressModal,
+  CartCard,
+} from "../../components";
 import {
   fetchAddressList,
   fetchCart,
 } from "../../contexts/Providers/UserDataProvider/helpers";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
-import { useDocumentTitle } from "../../hooks/useDocumentTitle";
-import { useNavigate } from "react-router-dom";
 import "./cart.css";
-import CartCheckout from "../../components/CartCheckout/CartCheckout";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
-import AddressCard from "../../components/Card/AddressCard/AddressCard";
-import AddressModal from "../../components/AddressModal/AddressModal";
 
 function Cart() {
   const {

@@ -1,11 +1,9 @@
-import React from "react";
-import ProductCard from "../../components/Card/ProductCard/ProductCard";
-import "./products.css";
 import { useEffect } from "react";
-import axios from "axios";
-import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
-import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+import { ProductCard } from "../../components";
+import { useProducts, useDocumentTitle } from "../../hooks";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import "./products.css";
 
 function Products() {
   const { state, dispatch, filteredProducts } = useProducts();
@@ -286,6 +284,9 @@ function Products() {
             <ProductCard key={prod._id} info={{ prod }} EMI={EMI} />
           ))}
         </div>
+        {filteredProducts.length === 0 && (
+          <h3 className="no-products-msg">No products matchting filters :/</h3>
+        )}
       </section>
     </main>
   );

@@ -1,13 +1,10 @@
-import React from "react";
-import "./auth.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useDocumentTitle } from "../../hooks/useDocumentTitle";
-import FormTextInput from "../../components/FormInputText/FormInputText";
-import { useAuthForm } from "../../hooks/useAuthForm/useAuthForm";
-import axios from "axios";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
 import { useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDocumentTitle, useAuthForm, useAuth } from "../../hooks";
+import { FormTextInput } from "../../components";
 import { toast } from "react-toastify";
+import axios from "axios";
+import "./auth.css";
 
 const EMAIL_REGEX = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
 

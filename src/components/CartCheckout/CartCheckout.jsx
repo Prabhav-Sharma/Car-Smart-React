@@ -1,15 +1,12 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useProducts, useAuth, useUserData } from "../../hooks";
 import { cartCalc } from "./cartCalc";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
-import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
-import "./cart-checkout.css";
+import { toast } from "react-toastify";
 import {
   addOrder,
   clearCart,
 } from "../../contexts/Providers/UserDataProvider/helpers";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import "./cart-checkout.css";
 
 function CartCheckout({ address }) {
   const { name, phone } = address;

@@ -1,7 +1,7 @@
 .dropdown-wrapper {
   position: relative;
   align-self: center;
-  flex-basis: 35%;
+  width: 25%;
 }
 
 .search-dropdown {

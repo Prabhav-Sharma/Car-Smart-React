@@ -1,15 +1,16 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
-import MockAPI from "../mockman";
-import Home from "../pages/Home/Home";
-import Compare from "../pages/Compare/Compare";
-import Products from "../pages/Products/Products";
-import Product from "../pages/Product/Product";
-import Login from "../pages/Authentication/Login";
-import Signup from "../pages/Authentication/Signup";
-import Bookmark from "../pages/Bookmark/Bookmark";
-import Cart from "../pages/Cart/Cart";
-import Order from "../pages/Order/Order";
+import {
+  Login,
+  Signup,
+  Bookmark,
+  Cart,
+  Compare,
+  Home,
+  Order,
+  Product,
+  Products,
+  MockAPI,
+} from "../pages";
 import { ProtectedRoutes } from "./ProtectedRoutes";
 
 const Router = () => {

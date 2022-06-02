@@ -1,10 +1,9 @@
-import reactDom from "react-dom";
 import { useReducer } from "react";
+import reactDom from "react-dom";
 import { GrClose } from "react-icons/gr";
-import styles from "./AddressModal.module.css";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
 import { addAddress } from "../../contexts/Providers/UserDataProvider/helpers";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
+import { useAuth, useUserData } from "../../hooks";
+import styles from "./AddressModal.module.css";
 
 const addressModalReducer = (state, action) => {
   switch (action.type) {

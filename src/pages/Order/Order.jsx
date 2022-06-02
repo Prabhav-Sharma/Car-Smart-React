@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchOrderById } from "../../contexts/Providers/UserDataProvider/helpers";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
-import CartCard from "../../components/Card/CartCard/CartCard";
+import { useAuth, useDocumentTitle } from "../../hooks";
+import { CartCard, AddressCard } from "../../components";
 import styles from "./Order.module.css";
-import AddressCard from "../../components/Card/AddressCard/AddressCard";
 
 function Order() {
   const { orderId } = useParams();
@@ -14,11 +13,11 @@ function Order() {
   } = useAuth();
   const navigate = useNavigate();
 
+  useDocumentTitle("Order | CarSmart");
+
   useEffect(() => {
     fetchOrderById(orderId, token, setOrder);
   }, [orderId]);
-
-  console.log(order);
 
   return (
     <section className={styles.section}>

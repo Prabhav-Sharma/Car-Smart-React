@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { useProducts } from "../../../contexts/Providers/ProductProvider/ProductProvider";
+import { useProducts } from "../../../hooks";
 import "./arrival-card.css";
 
 function ArrivalCard({ text }) {

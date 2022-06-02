@@ -1,6 +1,5 @@
-import React from "react";
-import "./carousel-card.css";
 import { Link } from "react-router-dom";
+import "./carousel-card.css";
 
 function CarouselCard({ src, text }) {
   return (

@@ -1,7 +1,4 @@
-import React from "react";
-import { useLoading } from "../../hooks/useLoading";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
+import { useLoading, useUserData, useAuth } from "../../hooks";
 import {
   removeFromBookmarks,
   addToBookmarks,
@@ -48,4 +45,4 @@ function BookmarkButton({ prod, classes }) {
   return buttonElement;
 }
 
-export { BookmarkButton };
+export default BookmarkButton;

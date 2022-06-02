@@ -1,13 +1,10 @@
-import React from "react";
-import "./cart-card.css";
 import { Link } from "react-router-dom";
+import { useDocumentTitle, useAuth, useUserData } from "../../../hooks";
 import {
   changeItemQuantityInCart,
   deleteFromCart,
 } from "../../../contexts/Providers/UserDataProvider/helpers";
-import { useUserData } from "../../../contexts/Providers/UserDataProvider/UserDataProvider";
-import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
-import { useAuth } from "../../../contexts/Providers/AuthProvider/AuthProvider";
+import "./cart-card.css";
 
 function CartCard({ prod, dynamic = true }) {
   const { userDataDispatch } = useUserData();
