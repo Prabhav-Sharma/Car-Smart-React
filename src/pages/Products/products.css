@@ -119,6 +119,11 @@ body {
 }
 
 @media only screen and (max-width: 900px) {
+
+  html{
+    font-size: 90%;
+  }
+
   .products-main {
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -126,7 +131,7 @@ body {
 
   .product-grid {
     gap: var(--sp-1);
-    justify-content: flex-start;
+    justify-content:center;
   }
 }
 
@@ -135,8 +140,16 @@ body {
     font-size: 75%;
   }
 
+  .products-main{
+   grid-template-columns: 1fr;
+  }
+
   .product-grid {
     gap: var(--sp-1-5);
+  }
+
+  .products-aside{
+    display: none;
   }
 }
 

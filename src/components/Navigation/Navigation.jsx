@@ -22,7 +22,7 @@ const Navigation = () => {
           <h2 className="title-highlight">Smart</h2>
         </Link>
       </div>
-      <ProductSearch prodFunc={searchHandler} classes={"search"} />
+      <ProductSearch prodFunc={searchHandler} classes={"search search-w-25"} />
       <div className="nav-links links-top flex-row">
         {isAuthenticated ? (
           <button

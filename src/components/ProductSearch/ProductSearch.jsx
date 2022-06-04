@@ -26,22 +26,24 @@ function ProductSearch({ prodFunc, classes }) {
       product.title.toLowerCase().includes(search.toLowerCase())
     );
 
-  const dropdownList = searchProducts(search).map((product) => (
-    <li
-      key={product._id}
-      onClick={(e) => {
-        prodFunc(e);
-        setSearch("");
-      }}
-      className="list-group-item"
-      product={JSON.stringify(product)}
-    >
-      {product.title}
-    </li>
-  ));
+  const dropdownList = searchProducts(search)
+    .slice(0, 4)
+    .map((product) => (
+      <li
+        key={product._id}
+        onClick={(e) => {
+          prodFunc(e);
+          setSearch("");
+        }}
+        className="list-group-item"
+        product={JSON.stringify(product)}
+      >
+        {product.title}
+      </li>
+    ));
 
   return (
-    <div className="flex-column dropdown-wrapper">
+    <div className={`flex-column dropdown-wrapper ${classes}`}>
       <input
         className={`form-input input-m input-round-border dropdown-search ${classes}`}
         type="text"
