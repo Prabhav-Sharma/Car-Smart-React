@@ -4,6 +4,7 @@ import { useDocumentTitle, useProducts } from "../../hooks";
 import loadingProduct from "./loadingProduct";
 import { CategoryDisplay, BookmarkButton, CartButton } from "../../components";
 import axios from "axios";
+import { toast } from "react-toastify";
 import "./product.css";
 import {
   MANUFACTURE_IMG,
@@ -36,13 +37,12 @@ function Product() {
           setProduct((product) => ({ ...product, ...response.data.product }));
           return;
         }
-        alert(
+        toast.error(
           "404: This item must be on a secret menu as we don't know about it"
         );
       })();
     } catch (e) {
-      alert("Whoops! this wasn't supposed to happen.");
-      console.log(e);
+      toast.error("Whoops! this wasn't supposed to happen.");
     }
   }, [id]);
 
