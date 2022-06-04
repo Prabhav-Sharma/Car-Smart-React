@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useProducts } from "../../hooks";
+import { toast } from "react-toastify";
 import axios from "axios";
 import "./product-search.css";
-import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
-import { toast } from "react-toastify";
 
 function ProductSearch({ prodFunc, classes }) {
   const { state: productsState, dispatch: productsDispatch } = useProducts();
@@ -26,22 +26,24 @@ function ProductSearch({ prodFunc, classes }) {
       product.title.toLowerCase().includes(search.toLowerCase())
     );
 
-  const dropdownList = searchProducts(search).map((product) => (
-    <li
-      key={product._id}
-      onClick={(e) => {
-        prodFunc(e);
-        setSearch("");
-      }}
-      className="list-group-item"
-      product={JSON.stringify(product)}
-    >
-      {product.title}
-    </li>
-  ));
+  const dropdownList = searchProducts(search)
+    .slice(0, 4)
+    .map((product) => (
+      <li
+        key={product._id}
+        onClick={(e) => {
+          prodFunc(e);
+          setSearch("");
+        }}
+        className="list-group-item"
+        product={JSON.stringify(product)}
+      >
+        {product.title}
+      </li>
+    ));
 
   return (
-    <div className="flex-column dropdown-wrapper">
+    <div className={`flex-column dropdown-wrapper ${classes}`}>
       <input
         className={`form-input input-m input-round-border dropdown-search ${classes}`}
         type="text"
@@ -59,4 +61,4 @@ function ProductSearch({ prodFunc, classes }) {
   );
 }
 
-export { ProductSearch };
+export default ProductSearch;

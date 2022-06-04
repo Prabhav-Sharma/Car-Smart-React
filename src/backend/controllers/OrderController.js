@@ -28,10 +28,10 @@ export const fetchOrderByIdHandler = function (schema, request) {
         }
       );
     }
-    const orderId = request.params.orderId;
+    const paramOrderId = request.params.orderId;
     const order = schema.users
       .findBy({ _id: userId })
-      .orders.find((order) => order._id === orderId);
+      .orders.find((order) => order.orderId === paramOrderId);
     return new Response(201, {}, { order: order });
   } catch (error) {
     return new Response(

@@ -1,5 +1,4 @@
-import React from "react";
-import { useAuth } from "../contexts/Providers/AuthProvider/AuthProvider";
+import { useAuth } from "../hooks";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 function ProtectedRoutes() {

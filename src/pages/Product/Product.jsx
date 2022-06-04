@@ -1,13 +1,11 @@
-import React from "react";
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { useDocumentTitle } from "../../hooks/useDocumentTitle";
-import "./product.css";
-import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
+import { useParams } from "react-router-dom";
+import { useDocumentTitle, useProducts } from "../../hooks";
 import loadingProduct from "./loadingProduct";
-import CategoryDisplay from "../../components/CategoryDisplay/CategoryDisplay";
-import { BookmarkButton } from "../../components/BookmarkButton/BookmarkButton";
+import { CategoryDisplay, BookmarkButton, CartButton } from "../../components";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "./product.css";
 import {
   MANUFACTURE_IMG,
   TYPE_IMG,
@@ -19,7 +17,6 @@ import {
   TRANSMISSION_IMG,
   SERVICECOST_IMG,
 } from "./CATEGORY_IMAGES";
-import CartButton from "../../components/CartButton/CartButton";
 
 function Product() {
   const params = useParams();
@@ -40,13 +37,12 @@ function Product() {
           setProduct((product) => ({ ...product, ...response.data.product }));
           return;
         }
-        alert(
+        toast.error(
           "404: This item must be on a secret menu as we don't know about it"
         );
       })();
     } catch (e) {
-      alert("Whoops! this wasn't supposed to happen.");
-      console.log(e);
+      toast.error("Whoops! this wasn't supposed to happen.");
     }
   }, [id]);
 

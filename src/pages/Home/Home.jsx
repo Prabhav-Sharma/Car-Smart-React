@@ -1,12 +1,9 @@
+import { CarouselCard, Footer, ArrivalCard } from "../../components";
+import { useDocumentTitle } from "../../hooks";
+import { Link } from "react-router-dom";
 import "./home.css";
-import Footer from "../../components/Footer/Footer";
-import CarouselCard from "../../components/Card/CarouselCard/CarouselCard";
-import ArrivalCard from "../../components/Card/ArrivalCard/ArrivalCard";
-import { useDocumentTitle } from "../../hooks/useDocumentTitle";
-import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
   useDocumentTitle("CarSmart");
 
   return (

@@ -134,7 +134,6 @@ const clearCart = async (token, dispatcher) => {
       url: "/api/user/cart",
       headers: { authorization: token },
     });
-    console.log(response);
     dispatcher({ type: "UPDATE_CART", payload: { cart: response.data.cart } });
   } catch (error) {
     toast.error("Uh oh, something broke down!");
@@ -174,11 +173,12 @@ const fetchOrderById = async (orderId, token, dispatcher) => {
 const addOrder = async (order, token, dispatcher) => {
   try {
     const response = await axios({
-      method: "GET",
+      method: "POST",
       url: `/api/order`,
       headers: { authorization: token },
       data: { order },
     });
+    console.log(response);
     dispatcher({
       type: "UPDATE_ORDERS",
       payload: { orders: response.data.orders },
@@ -214,8 +214,6 @@ const fetchAddressList = async (token, dispatcher) => {
       url: "/api/user/address",
       headers: { authorization: token },
     });
-
-    console.log(response);
     dispatcher({
       type: "UPDATE_ADDRESS_LIST",
       payload: { addressList: response.data.addressList },

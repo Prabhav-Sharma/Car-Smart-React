@@ -1,15 +1,12 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useProducts, useAuth, useUserData } from "../../hooks";
 import { cartCalc } from "./cartCalc";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
-import { useProducts } from "../../contexts/Providers/ProductProvider/ProductProvider";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
-import "./cart-checkout.css";
-import { v4 as uuid } from "uuid";
+import { toast } from "react-toastify";
 import {
   addOrder,
   clearCart,
 } from "../../contexts/Providers/UserDataProvider/helpers";
-import { toast } from "react-toastify";
+import "./cart-checkout.css";
 
 function CartCheckout({ address }) {
   const { name, phone } = address;
@@ -17,6 +14,7 @@ function CartCheckout({ address }) {
   const { state } = useProducts();
   const { cart } = userDataState;
   const { EMI: EMITenure } = state;
+  const navigate = useNavigate();
   const {
     authState: { token },
   } = useAuth();
@@ -64,7 +62,7 @@ function CartCheckout({ address }) {
       description: "Book your ride",
       handler: async function (response) {
         const paymentId = response.razorpay_payment_id;
-        const orderId = uuid();
+        const orderId = String(Math.floor(Math.random() * 10000));
 
         const order = {
           paymentId,
@@ -75,13 +73,14 @@ function CartCheckout({ address }) {
         };
         await addOrder(order, token, userDataDispatch);
         await clearCart(token, userDataDispatch);
+        navigate(`/order/${orderId}`);
 
         toast.success("Order Successful");
       },
 
       prefill: {
         name: name,
-        email: "chandler.bing@friends.com",
+        email: "test@email.com",
         contact: phone,
       },
     };

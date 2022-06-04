@@ -1,8 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { BookmarkButton, CartButton } from "../../.";
 import "./product-card.css";
-import { BookmarkButton } from "../../BookmarkButton/BookmarkButton";
-import CartButton from "../../CartButton/CartButton";
 
 function ProductCard({ info, EMI }) {
   const { title, price, src, _id } = info.prod;

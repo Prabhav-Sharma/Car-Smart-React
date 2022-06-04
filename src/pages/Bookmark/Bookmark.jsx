@@ -1,12 +1,9 @@
-import React from "react";
-import "./bookmark.css";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import BookmarkCard from "../../components/Card/BookmarkCard/BookmarkCard";
-import { useDocumentTitle } from "../../hooks/useDocumentTitle";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
+import { BookmarkCard } from "../../components";
+import { useDocumentTitle, useUserData, useAuth } from "../../hooks";
 import { fetchBookmarks } from "../../contexts/Providers/UserDataProvider/helpers";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
+import "./bookmark.css";
 
 function Bookmark() {
   const { userDataState, userDataDispatch } = useUserData();

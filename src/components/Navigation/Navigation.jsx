@@ -1,8 +1,7 @@
-import "./navigation.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
-import { ProductSearch } from "../ProductSearch/ProductSearch";
+import { useAuth, useUserData } from "../../hooks";
+import { ProductSearch } from "../.";
+import "./navigation.css";
 
 const Navigation = () => {
   const { authState, authDispatch } = useAuth();
@@ -23,7 +22,7 @@ const Navigation = () => {
           <h2 className="title-highlight">Smart</h2>
         </Link>
       </div>
-      <ProductSearch prodFunc={searchHandler} classes={"search"} />
+      <ProductSearch prodFunc={searchHandler} classes={"search search-w-25"} />
       <div className="nav-links links-top flex-row">
         {isAuthenticated ? (
           <button

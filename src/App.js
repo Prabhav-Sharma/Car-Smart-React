@@ -1,5 +1,5 @@
 import "./App.css";
-import Navigation from "./components/Navigation/Navigation";
+import {Navigation} from "./components";
 import Router from "./Router/Router";
 import { ToastContainer } from "react-toastify";
 
@@ -9,9 +9,9 @@ function App() {
       <Navigation />
       <ToastContainer
         theme="dark"
-        autoClose={2000}
+        autoClose={1200}
         limit="2"
-        position="bottom-right"
+        position="bottom-left"
       />
       <Router />
     </div>

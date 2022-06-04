@@ -1,11 +1,8 @@
-import React from "react";
-import { useUserData } from "../../contexts/Providers/UserDataProvider/UserDataProvider";
+import { useLoading, useAuth, useUserData } from "../../hooks";
 import {
   addToCart,
   deleteFromCart,
 } from "../../contexts/Providers/UserDataProvider/helpers";
-import { useAuth } from "../../contexts/Providers/AuthProvider/AuthProvider";
-import { useLoading } from "../../hooks/useLoading";
 import { toast } from "react-toastify";
 
 function CartButton({ prod, classes, btnText = "Remove" }) {

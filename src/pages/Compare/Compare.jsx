@@ -1,7 +1,8 @@
-import React from "react";
-import "./compare.css";
-import { useDocumentTitle } from "../../hooks/useDocumentTitle";
-import CategoryDisplay from "../../components/CategoryDisplay/CategoryDisplay";
+import { useReducer } from "react";
+import { useDocumentTitle } from "../../hooks";
+import { CategoryDisplay, ProductSearch } from "../../components";
+import { Link } from "react-router-dom";
+import { compareReducer, initialState } from "./helpers";
 import {
   MANUFACTURE_IMG,
   TYPE_IMG,
@@ -14,10 +15,7 @@ import {
   SERVICECOST_IMG,
   PRICE_IMG,
 } from "../Product/CATEGORY_IMAGES";
-import { useReducer } from "react";
-import { Link } from "react-router-dom";
-import { compareReducer, initialState } from "./helpers";
-import { ProductSearch } from "../../components/ProductSearch/ProductSearch";
+import "./compare.css";
 
 function Compare() {
   const [state, dispatch] = useReducer(compareReducer, initialState);

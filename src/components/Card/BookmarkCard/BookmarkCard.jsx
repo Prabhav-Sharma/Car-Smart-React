@@ -1,11 +1,8 @@
-import React from "react";
-import "./bookmark-card.css";
 import { Link } from "react-router-dom";
-import { useUserData } from "../../../contexts/Providers/UserDataProvider/UserDataProvider";
-import { useLoading } from "../../../hooks/useLoading";
+import { useLoading, useUserData, useAuth } from "../../../hooks";
 import { removeFromBookmarks } from "../../../contexts/Providers/UserDataProvider/helpers";
-import CartButton from "../../CartButton/CartButton";
-import { useAuth } from "../../../contexts/Providers/AuthProvider/AuthProvider";
+import { CartButton } from "../../.";
+import "./bookmark-card.css";
 
 function BookmarkCard({ prod }) {
   const { userDataDispatch } = useUserData();

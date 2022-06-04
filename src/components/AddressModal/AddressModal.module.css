@@ -17,7 +17,7 @@
     border:gray;
     align-self: center;
     height: max-content;
-    width: 22rem;
+    width: 23rem;
     display: flex;
     flex-direction: column; 
     border-radius: 0.75rem;
@@ -68,9 +68,18 @@
 
 .input_heading{
     color:var(--white);
-    transform: translateY(5px);
+    transform: translateY(7px);
+    margin-bottom: var(--sp-0-5);
 }
 
-.input{
+input{
     color:var(--black);
+    font-weight: 500;
+}
+
+.input_wrapper{
+    display: flex;
+    direction: row;
+    gap:var(--sp-0-25);
+    align-items: center;
 }
