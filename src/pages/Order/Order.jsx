@@ -50,20 +50,18 @@ function Order() {
         </>
       ) : (
         <>
-          <h3 className={styles.failed_message}>
-            Failed to load order, something went wrong!
-          </h3>
-          <div className={styles.error_img_container}>
+          <h3 className={styles.loading_message}>Loading your order!</h3>
+          <div className={styles.loading_img_container}>
             <img
-              className={styles.error_img}
-              src="https://res.cloudinary.com/carsmart/image/upload/v1654091182/UI%20Images/bug_fixing_oc-7-a_oide3h.svg"
-              alt="Bug Fixing Image"
+              className={styles.loading_img}
+              src="https://res.cloudinary.com/carsmart/image/upload/v1648102604/d43c11d76c7db33af616426597e88833_onntyl.gif"
+              alt="Loading"
             />
           </div>
         </>
       )}
       <button
-        className="btn prim-btn products-btn"
+        className={`btn prim-btn products-btn ${styles.products_btn}`}
         onClick={() => navigate("/products")}
       >
         Continue Shopping
