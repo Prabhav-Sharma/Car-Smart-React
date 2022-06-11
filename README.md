@@ -32,5 +32,6 @@ The platform enables the user to navigate through a range of cars from several c
 - There are button loaders which indicate the task is in progress, upon completion the loader stops and an alert is fired to inform the user about the result.
 
 ### Preview:
-![chrome-capture (11)](https://user-images.githubusercontent.com/88072012/162270078-32c0992c-5502-4576-a071-bcaf7eb2cb2c.gif)
+https://user-images.githubusercontent.com/88072012/173186893-7894839c-ad6e-4cc8-b806-47870bc6e36a.mp4
+
 
